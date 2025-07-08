@@ -1,62 +1,30 @@
-# AWS Instance Control App
+# AI App: AWS EC2 Instance Controller
 
-This project is a Node.js application that allows users to manage AWS instances. It provides functionalities to start, stop, and check the status of instances through a RESTful API.
+This project is a web-based application to control the start/stop state of an AWS EC2 instance. It features:
 
-## Table of Contents
+- Node.js Express backend with AWS SDK
+- React frontend (PWA) with touch-friendly slider controls
+- REST API for EC2 start/stop
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Environment Variables](#environment-variables)
-- [Contributing](#contributing)
-- [License](#license)
+## Getting Started
 
-## Installation
-
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/aws-instance-control-app.git
-   ```
-
-2. Navigate to the project directory:
-   ```
-   cd aws-instance-control-app
-   ```
-
-3. Install the dependencies:
-   ```
+1. Install dependencies:
+   ```sh
    npm install
    ```
+2. Start the backend server:
+   ```sh
+   node server.js
+   ```
+3. Start the frontend:
+   ```sh
+   npm start
+   ```
 
-4. Create a `.env` file in the root directory and add your AWS credentials and configuration settings.
+## AWS Credentials
 
-## Usage
+Set your AWS credentials and region as environment variables or in `~/.aws/credentials`.
 
-To start the application, run:
-```
-npm start
-```
+## Security
 
-The server will start on `http://localhost:3000` by default.
-
-## API Endpoints
-
-- `POST /instances/start` - Starts an AWS instance.
-- `POST /instances/stop` - Stops an AWS instance.
-- `GET /instances/status` - Retrieves the status of an AWS instance.
-
-## Environment Variables
-
-The following environment variables are required:
-
-- `AWS_ACCESS_KEY_ID` - Your AWS access key ID.
-- `AWS_SECRET_ACCESS_KEY` - Your AWS secret access key.
-- `AWS_REGION` - The AWS region where your instances are located.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License.
+This app is for demonstration purposes. Secure the backend before deploying to production.
