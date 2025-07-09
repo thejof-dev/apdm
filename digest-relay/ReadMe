@@ -34,5 +34,32 @@ curl -X POST http://localhost:3000/relay \
     "query": "FocusPushAFMF=press"
   }'
 
+----------------------------------------------------------------------------
 
+To install as a service
 
+Create /etc/systemd/system/digest-relay.service
+
+sudo nano /etc/systemd/system/digest-relay.service
+
+[Unit]
+Description=Digest Relay Node.js Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /home/ec2-user/digest-relay/index.js
+WorkingDirectory=/home/ec2-user/digest-relay
+Restart=on-failure
+Environment=NODE_ENV=production
+User=ec2-user
+
+[Install]
+WantedBy=multi-user.target
+
+Reload systemd and enable the service
+
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl enable digest-relay
+sudo systemctl start digest-relay
