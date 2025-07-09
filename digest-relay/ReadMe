@@ -1,3 +1,9 @@
+Sonry FR7 CGI command relay to relay comands form non digest authentucation enabled clients (companion)
+
+----------------------------------------------------------------------------
+
+INSTALL
+
 Navigate to your project folder
 mkdir ~/digest-relay
 cd ~/digest-relay
@@ -7,3 +13,26 @@ npm init -y
 
 Install Required Packages
 npm install express body-parser digest-fetch
+
+----------------------------------------------------------------------------
+
+Usage
+
+for example to send 
+
+http://192.168.50.51/command/ptzf.cgi?FocusPushAFMF=press
+ 
+use
+
+curl -X POST http://localhost:3000/relay \
+  -H "Content-Type: application/json" \
+  -d '{
+    "ip": "192.168.50.51",
+    "path": "ptzf.cgi",
+    "username": "admin",
+    "password": "password",
+    "query": "FocusPushAFMF=press"
+  }'
+
+
+
