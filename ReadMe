@@ -1,0 +1,9 @@
+Navigate to your project folder
+mkdir ~/digest-relay
+cd ~/digest-relay
+
+Initialize a Node.js project
+npm init -y
+
+Install Required Packages
+npm install express body-parser digest-fetch
